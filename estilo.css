@@ -1,0 +1,58 @@
+body {
+    background-size: cover;
+    background-position: center;
+    font-family: Calibri;
+    font-weight: 300;
+    position: relative;
+    height: 100vh;
+    color: #555;
+}
+
+.instructionsTittle {
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.instructionsBody {
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.nextButton_1 {
+    display:block;
+    margin: 0 auto; 
+    margin-top: 200px;
+}
+
+.nextButton_2 {
+    display:block;
+    margin: 0 auto; 
+}
+
+.jabon {
+    width:300px;
+   height:300px;
+   margin: auto;
+   /*Scale down will take the necessary specified space that is 300px x 300px without stretching the image*/
+    object-fit:scale-down;
+}
+
+.demo {
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+}

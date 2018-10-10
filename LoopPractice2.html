@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="estilo.css">
+        <title>LoopPractice </title>
+    </head>
+
+    <body>
+        <br><br><br><br><br><br><br><br><br><br><br>
+
+        <!-- <script src="codigo.js"></script> -->
+        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+        
+        <div class="demo" id="demo"></div>
+
+        <div class="counter" id="counter"></div>
+    </body>
+
+
+
+
+<script>
+//startLoop();
+
+
+function variablePrime(d){
+    return function () {
+        prime(d);
+    };
+}
+
+
+var primeList = ["Happy", "Sad", "Hope", "Gun", "Rainbow", "Sunrise","Arepa","Cachapa"];
+
+function stimuli(){
+    setTimeout(function () {document.getElementById("demo").innerHTML = primeList[1];}, 500);
+    setTimeout(blankScreen, 2000);
+    setTimeout(function () {document.getElementById("demo").innerHTML = primeList[2];}, 4000);
+};
+
+
+// function loop(i){
+
+//     for (var i = 0; i < 5; i++) {
+//         setTimeout(function () {document.getElementById("demo").innerHTML = primeList[1];}, 1000);
+//         setTimeout(blankScreen, 4000);
+//         setTimeout(function () {document.getElementById("demo").innerHTML = primeList[2];}, 6000);
+//         // console.log(primeList[i]);
+//         // console.log("prueba");
+
+//     };
+// };
+
+function prime() {
+    document.getElementById("demo").innerHTML = primeList;
+};
+
+function blankScreen() {
+    document.getElementById("demo").innerHTML = "";
+};
+
+
+stimuli();
+
+//function startLoop(){
+    
+//};
+
+// function imprimir (){
+//     console.log(primeList[i])
+// };
+
+
+</script>
+      

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="estilo.css">
+        <title>Estimulo3 </title>
+    </head>
+
+    <body>
+        <br><br><br><br><br><br><br><br><br><br><br>
+
+        <!-- <script src="codigo.js"></script> -->
+        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+        
+        <div class="demo" id="demo"></div>
+
+        <div class="counter" id="counter"></div>
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <!-- <button onclick="start()">Start</button>
+        <button onclick="end()">End</button> -->
+
+
+        <script>
+
+        var readylMsg = setTimeout(firstMsg, 1000) //Ejecuta firstMsg con 1 seg de tiempo de espera, el cual puede servir tambien como tiempo entre ensayos (inter trial interval)
+        function firstMsg(){
+            setTimeout(getReady, 0) //Aparece get ready
+            setTimeout(firstTrial, 3000); //Despues de 3 segs inicia timedText
+        }
+        
+        function getReady() {
+            document.getElementById("demo").innerHTML = "Get Ready";
+        };
+        
+        
+        var primeList = ["Happy", "Sad", "Hope", "Gun", "Rainbow"];
+
+        var targetList = ["Target 1", "Target 2", "Target 3", "Target 4"];
+        
+        var firstTrial = function (){                
+            setTimeout(function () {document.getElementById("demo").innerHTML = primeList[0]}, 0);//duracion de 'get ready' 
+            setTimeout(blankScreen, 250);//duracion de primeList[0] 
+            setTimeout(target, 300);
+            }
+
+            $("body").keydown(function (event) { //Al presionar una tecla
+            secondTrial(); //se ejecuta la funcion secondTrial
+        });
+
+        var secondTrial = function (){
+            setTimeout(function () {document.getElementById("demo").innerHTML = primeList[1]}, 3000);//duracion de 'get ready' 
+            setTimeout(blankScreen, 3250);//duracion de primeList[0] 
+            setTimeout(target, 3300);
+            }
+
+            $("body").keydown(function (event) { //Al presionar una tecla
+            thirdTrial();
+        });
+         
+        var thirdTrial = function (){
+            setTimeout(function () {document.getElementById("demo").innerHTML = primeList[2]}, 3000);//duracion de 'get ready' 
+            setTimeout(blankScreen, 3250);//duracion de primeList[0] 
+            setTimeout(target, 3300);
+        };
+
+        function blankScreen() {
+            document.getElementById("demo").innerHTML = "";
+        };
+
+        var startTime, endTime, timeDiff;
+        
+        function target() {
+            document.getElementById("demo").innerHTML = targetList[0];
+            startTime = new Date();
+        };
+            
+        function end() {  
+            endTime = new Date();
+            var timeDiff = endTime - startTime; //in ms
+            console.log(timeDiff);
+            document.getElementById("demo").innerHTML = "";
+            };
+        
+        $("body").keydown(function (event) { //Al presionar una tecla
+            end(); //se ejecuta la funcion end
+        });       
+
+        answer = [];
+
+        $("body").keydown(function (event) {
+            console.log(event.keyCode);
+            answer.push(event.keyCode);
+            });
+        console.log(answer)
+
+        </script>
+    </body>
+</html>

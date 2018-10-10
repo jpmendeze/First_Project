@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="estilo.css">
+        <title>Project </title>
+    </head>
+
+    <body>
+        <br><br><br><br><br><br><br><br><br><br><br>
+
+        <!-- <script src="codigo.js"></script> -->
+        <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+        
+        <div class="demo" id="demo"></div>
+
+        <div class="counter" id="counter"></div>
+
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <!-- <button onclick="start()">Start</button>
+        <button onclick="end()">End</button> -->
+
+
+        <script>
+
+        var readylMsg = setTimeout(firstMsg, 1000) //Ejecuta firstMsg con 1 seg de tiempo de espera, el cual puede servir tambien como tiempo entre ensayos (inter trial interval)
+        function firstMsg(){
+            setTimeout(getReady, 0) //Aparece get ready
+            setTimeout(timedText, 3000); //Despues de 3 segs inicia timedText
+        };
+        
+        function getReady() {
+            document.getElementById("demo").innerHTML = "Get Ready";
+        };
+        
+                                           
+        function timedText() { //todos los 'setTimeouts de abajo empiezan al mismo tiempo, el tiempo de exposicion debe ser el tiempo del estimulo actual mas (+) el timpo del estimulo anterior 
+            setTimeout(prime, 0)//duracion de 'get ready' 
+            setTimeout(blankScreen, 250)//duracion de word1 
+            setTimeout(target, 300)
+        };
+
+        function prime() {
+            document.getElementById("demo").innerHTML = "Prime";
+        };
+        function blankScreen() {
+            document.getElementById("demo").innerHTML = "";
+        };
+        function target() {
+            document.getElementById("demo").innerHTML = "Target";
+            startTime = new Date();
+        };
+        
+        var startTime, endTime, timeDiff;
+                
+        function end() {
+            endTime = new Date();
+            var timeDiff = endTime - startTime; //in ms
+            console.log(timeDiff);
+            document.getElementById("demo").innerHTML = "";
+            };
+              
+        $("body").keydown(function (event) { //Al presionar una tecla
+            end(); //se ejecuta la funcion end
+        });      
+        
+        answer = [];
+
+        $("body").keydown(function (event) {
+            console.log(event.keyCode);
+            answer.push(event.keyCode);
+            });
+        console.log(answer)
+              
+
+        //Para registrar el tiempo, por ahora conectado a los botones de start y end lo saque de https://stackoverflow.com/questions/41632942/how-to-measure-time-elapsed-on-javascript
+        // var startTime, endTime;
+
+        // function start() {
+        //     startTime = new Date();
+        // };
+
+        // function end() {
+        //     endTime = new Date();
+        // var timeDiff = endTime - startTime; //in ms
+        
+        // console.log(timeDiff);
+        // }
+
+        </script>
+    </body>
+</html>
